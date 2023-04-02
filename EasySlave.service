@@ -1,0 +1,15 @@
+[Unit]
+Description=EasySlave
+After=network.target
+
+[Service]
+Environment="BOT_API_KEY=$BOT_API_KEY"
+Type=simple
+User=root
+ExecStart=/srv/EasySlave/venv/bin/python /srv/EasySlave/bot.py
+KillMode=process
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
